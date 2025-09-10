@@ -1,15 +1,28 @@
-public class Task3 {
-    public static void main(String[] args){
+public class Main {
+    public static void main(String[] args) {
         BankAccount bankAccount = new BankAccount();
-        ... // передайте в банкомат сумму на счету
-        System.out.println("Количество денег на счету - " + ... + " р.");
-        ... // вызовите метод вывода средств
-        System.out.println("Количество денег на счету - " + ... + " р.");
+        bankAccount.setMoneyAmount(1000);
+        System.out.println("Количество денег на счету - " + bankAccount.getMoneyAmount() + " р.");
+        bankAccount.withdrawAll();
+        System.out.println("Количество денег на счету - " + bankAccount.getMoneyAmount() + " р.");
     }
 }
+
 class BankAccount {
     private long moneyAmount;
 
-    // допишите код методов
-    // используйте параметр newMoneyAmount для установки нового значения
+    public long getMoneyAmount(){
+        return moneyAmount;
+
+    }
+    public void setMoneyAmount(long newMoneyAmount){
+        this.moneyAmount = newMoneyAmount;
+
+    }
+
+    public void withdrawAll(){
+        moneyAmount = 0;
+        System.out.println("Со счёта снято " + moneyAmount + "р.");
+    }
 }
+
